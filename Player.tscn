@@ -1,0 +1,93 @@
+[gd_scene load_steps=13 format=3 uid="uid://bv5lmmect3s21"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_o84o1"]
+[ext_resource type="Texture2D" uid="uid://bgx7iyhh6k44y" path="res://assets/player/run/0000.png" id="3_ae4xi"]
+[ext_resource type="Texture2D" uid="uid://dyx6dc4wvn051" path="res://assets/player/run/0001.png" id="4_hw3f5"]
+[ext_resource type="PackedScene" uid="uid://cmnpyp7vvvpfo" path="res://effect/Smoke.tscn" id="5_d76tn"]
+[ext_resource type="Texture2D" uid="uid://oghrwdvqbenu" path="res://assets/player/run/0002.png" id="5_j2cwe"]
+[ext_resource type="Texture2D" uid="uid://ctj2kea1p3cp" path="res://assets/player/run/0003.png" id="6_3600c"]
+[ext_resource type="Texture2D" uid="uid://bclaamqtt7ox7" path="res://assets/player/run/0004.png" id="7_um4sh"]
+[ext_resource type="Texture2D" uid="uid://dh4oimuekwscl" path="res://assets/player/run/0005.png" id="8_kyfv8"]
+[ext_resource type="Texture2D" uid="uid://bts300duoumnw" path="res://assets/player/run/0006.png" id="9_j2lfd"]
+[ext_resource type="Texture2D" uid="uid://b57rjical2ttf" path="res://assets/player/run/0007.png" id="10_kkh7c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_545x6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ae4xi")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_3600c")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ae4xi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hw3f5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_j2cwe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3600c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_um4sh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kyfv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_j2lfd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_kkh7c")
+}],
+"loop": true,
+"name": &"run",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rlbqp"]
+radius = 22.0
+height = 108.0
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_o84o1")
+SmokeEffect = ExtResource("5_d76tn")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(360, 0)
+limit_left = 0
+limit_top = 0
+limit_bottom = 720
+
+[node name="Anime" type="AnimatedSprite2D" parent="."]
+position = Vector2(7, -6)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_545x6")
+animation = &"run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_rlbqp")
+
+[node name="SpeedTimer" type="Timer" parent="."]
+wait_time = 7.0
+
+[node name="JumpEffectTimer" type="Timer" parent="."]
+wait_time = 0.07
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="SpeedTimer" to="." method="_on_speed_timer_timeout"]
+[connection signal="timeout" from="JumpEffectTimer" to="." method="_on_jump_effect_timer_timeout"]

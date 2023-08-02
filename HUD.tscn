@@ -1,0 +1,98 @@
+[gd_scene load_steps=10 format=3 uid="uid://drs1t2lex0vhd"]
+
+[ext_resource type="Script" path="res://HUD.gd" id="1_c357w"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_sknk3"]
+action = &"new_game"
+
+[sub_resource type="Shortcut" id="Shortcut_rru54"]
+events = [SubResource("InputEventAction_sknk3")]
+
+[sub_resource type="Gradient" id="Gradient_2vcku"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ivbal"]
+gradient = SubResource("Gradient_2vcku")
+width = 640
+height = 720
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_31051"]
+size = Vector2(640, 720)
+
+[sub_resource type="Gradient" id="Gradient_hnffn"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1b2k7"]
+gradient = SubResource("Gradient_hnffn")
+width = 640
+height = 720
+fill_to = Vector2(0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dkri8"]
+size = Vector2(640, 720)
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_c357w")
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 48.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Message" type="Label" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -131.5
+offset_bottom = -40.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 64
+text = "Jump King Tristana"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -88.5
+offset_top = -294.0
+offset_right = 88.5
+offset_bottom = -217.0
+grow_horizontal = 2
+grow_vertical = 0
+shortcut = SubResource("Shortcut_rru54")
+text = "Play"
+
+[node name="ScoreTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="UpTouchButton" type="TouchScreenButton" parent="."]
+texture_normal = SubResource("GradientTexture2D_ivbal")
+shape = SubResource("RectangleShape2D_31051")
+action = "up"
+
+[node name="DownTouchButton" type="TouchScreenButton" parent="."]
+position = Vector2(640, 0)
+texture_normal = SubResource("GradientTexture2D_1b2k7")
+shape = SubResource("RectangleShape2D_dkri8")
+action = "down"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]

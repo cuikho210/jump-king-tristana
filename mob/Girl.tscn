@@ -1,0 +1,209 @@
+[gd_scene load_steps=45 format=3 uid="uid://kfi2f5dinjej"]
+
+[ext_resource type="PackedScene" uid="uid://berjovpytymb4" path="res://mob/Mob.tscn" id="1_d3wb4"]
+[ext_resource type="Texture2D" uid="uid://bffj4bdd0hhkn" path="res://assets/girl/Balancing/balancing1.png" id="2_o6q7e"]
+[ext_resource type="Texture2D" uid="uid://db3wi5it6n0bn" path="res://assets/girl/Balancing/balancing2.png" id="3_c646h"]
+[ext_resource type="Texture2D" uid="uid://dww38aqo1bcvl" path="res://assets/girl/Balancing/balancing3.png" id="4_x4vdo"]
+[ext_resource type="Texture2D" uid="uid://76ucbrj2ev86" path="res://assets/girl/Balancing/balancing4.png" id="5_5w26a"]
+[ext_resource type="Texture2D" uid="uid://c7nkvnl2kt01c" path="res://assets/girl/Balancing/balancing5.png" id="6_letd5"]
+[ext_resource type="Texture2D" uid="uid://c2nc3kwhshvpf" path="res://assets/girl/Balancing/balancing6.png" id="7_l3mjg"]
+[ext_resource type="Texture2D" uid="uid://do8b7w8wjmfva" path="res://assets/girl/Balancing/balancing7.png" id="8_bv1me"]
+[ext_resource type="Texture2D" uid="uid://cosv0p31utjx1" path="res://assets/girl/Balancing/balancing8.png" id="9_4y1ln"]
+[ext_resource type="Texture2D" uid="uid://bbn546hqc2224" path="res://assets/girl/hips/hips1.png" id="10_os7nr"]
+[ext_resource type="Texture2D" uid="uid://c1nruadcs00ad" path="res://assets/girl/hips/hips2.png" id="11_8upya"]
+[ext_resource type="Texture2D" uid="uid://l88w2lrc4q6m" path="res://assets/girl/hips/hips3.png" id="12_qhclc"]
+[ext_resource type="Texture2D" uid="uid://xehtoewymfnq" path="res://assets/girl/hips/hips4.png" id="13_xwocy"]
+[ext_resource type="Texture2D" uid="uid://iqxbhmux03xj" path="res://assets/girl/hips/hips5.png" id="14_1ffy7"]
+[ext_resource type="Texture2D" uid="uid://h8kkyagivd7y" path="res://assets/girl/hips/hips6.png" id="15_c8u6c"]
+[ext_resource type="Texture2D" uid="uid://8r2ckf3cjxa8" path="res://assets/girl/hips/hips7.png" id="16_387w6"]
+[ext_resource type="Texture2D" uid="uid://bbgvswlniojv" path="res://assets/girl/hips/hips8.png" id="17_bhekw"]
+[ext_resource type="Texture2D" uid="uid://ba8oral6t5h0" path="res://assets/girl/Skip/skip1.png" id="18_vny8o"]
+[ext_resource type="Texture2D" uid="uid://blswdsg1blfw" path="res://assets/girl/Skip/skip2.png" id="19_7keo6"]
+[ext_resource type="Texture2D" uid="uid://dxv6sbcobtxn4" path="res://assets/girl/Skip/skip3.png" id="20_w4xhp"]
+[ext_resource type="Texture2D" uid="uid://cftn4a01jec5l" path="res://assets/girl/Skip/skip4.png" id="21_0j7kc"]
+[ext_resource type="Texture2D" uid="uid://c5io8cypejl1d" path="res://assets/girl/Skip/skip5.png" id="22_j6tvy"]
+[ext_resource type="Texture2D" uid="uid://cy16coqtx660t" path="res://assets/girl/Skip/skip6.png" id="23_uonn1"]
+[ext_resource type="Texture2D" uid="uid://d36rrgtqm1q71" path="res://assets/girl/Skip/skip7.png" id="24_yfoei"]
+[ext_resource type="Texture2D" uid="uid://ui0g0246b71h" path="res://assets/girl/Skip/skip8.png" id="25_syqvf"]
+[ext_resource type="Texture2D" uid="uid://bqqvahcmr2ypg" path="res://assets/girl/slide/slide1.png" id="26_ljudl"]
+[ext_resource type="Texture2D" uid="uid://dpmwxprv7nr38" path="res://assets/girl/slide/slide2.png" id="27_4bemg"]
+[ext_resource type="Texture2D" uid="uid://djq7kco2kitbs" path="res://assets/girl/slide/slide3.png" id="28_j88av"]
+[ext_resource type="Texture2D" uid="uid://bnmyrx7hax6cx" path="res://assets/girl/slide/slide4.png" id="29_fmkrn"]
+[ext_resource type="Texture2D" uid="uid://cdr307ykfgvt" path="res://assets/girl/slide/slide5.png" id="30_dfmey"]
+[ext_resource type="Texture2D" uid="uid://q5af2p554qt5" path="res://assets/girl/slide/slide6.png" id="31_1vpcy"]
+[ext_resource type="Texture2D" uid="uid://st72ribpooff" path="res://assets/girl/slide/slide7.png" id="32_17roc"]
+[ext_resource type="Texture2D" uid="uid://sr2k83uis8a2" path="res://assets/girl/slide/slide8.png" id="33_rj61a"]
+[ext_resource type="Texture2D" uid="uid://c0h538j8x2g8q" path="res://assets/girl/snap/snap1.png" id="34_yw0mb"]
+[ext_resource type="Texture2D" uid="uid://c3pwsqmfjjigr" path="res://assets/girl/snap/snap2.png" id="35_kiq04"]
+[ext_resource type="Texture2D" uid="uid://dlisp68rhw446" path="res://assets/girl/snap/snap3.png" id="36_otnrp"]
+[ext_resource type="Texture2D" uid="uid://ikmfxmtg4rlm" path="res://assets/girl/snap/snap4.png" id="37_apgtc"]
+[ext_resource type="Texture2D" uid="uid://d4gjjkeqf5rwb" path="res://assets/girl/snap/snap5.png" id="38_2iq17"]
+[ext_resource type="Texture2D" uid="uid://bwnfht4bsdv16" path="res://assets/girl/snap/snap6.png" id="39_pjffm"]
+[ext_resource type="Texture2D" uid="uid://cgfmsfq08x726" path="res://assets/girl/snap/snap7.png" id="40_g1pjh"]
+[ext_resource type="Texture2D" uid="uid://dva5folwgwrkn" path="res://assets/girl/snap/snap8.png" id="41_7h747"]
+[ext_resource type="Script" path="res://mob/Girl_AnimatedSprite2D.gd" id="42_phkxg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vxjf4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_o6q7e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_c646h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_x4vdo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5w26a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_letd5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_l3mjg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bv1me")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4y1ln")
+}],
+"loop": true,
+"name": &"balancing",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_os7nr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8upya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qhclc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_xwocy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_1ffy7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_c8u6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_387w6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_bhekw")
+}],
+"loop": true,
+"name": &"hips",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_vny8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_7keo6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_w4xhp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_0j7kc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_j6tvy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_uonn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_yfoei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_syqvf")
+}],
+"loop": true,
+"name": &"skip",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_ljudl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_4bemg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_j88av")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_fmkrn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_dfmey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_1vpcy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_17roc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_rj61a")
+}],
+"loop": true,
+"name": &"slide",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_yw0mb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_kiq04")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_otnrp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_apgtc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_2iq17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_pjffm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_g1pjh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_7h747")
+}],
+"loop": true,
+"name": &"snap",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jksc8"]
+radius = 24.0
+height = 110.0
+
+[node name="Girl" instance=ExtResource("1_d3wb4")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(0, -9)
+scale = Vector2(2.4, 2.4)
+sprite_frames = SubResource("SpriteFrames_vxjf4")
+animation = &"hips"
+frame_progress = 0.280616
+script = ExtResource("42_phkxg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+shape = SubResource("CapsuleShape2D_jksc8")
