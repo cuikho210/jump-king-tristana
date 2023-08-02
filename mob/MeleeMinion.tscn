@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://b3qnvcdpdqthn"]
+
+[ext_resource type="PackedScene" uid="uid://berjovpytymb4" path="res://mob/Mob.tscn" id="1_7u12f"]
+[ext_resource type="Texture2D" uid="uid://ba16an5qog7et" path="res://assets/mobs/red_melee_minion/0000.png" id="2_b6g3w"]
+[ext_resource type="Texture2D" uid="uid://cyvm4wod7g5d8" path="res://assets/mobs/red_melee_minion/0001.png" id="3_i7v3s"]
+[ext_resource type="Texture2D" uid="uid://ciu4376flwetf" path="res://assets/mobs/red_melee_minion/0002.png" id="4_g453v"]
+[ext_resource type="Texture2D" uid="uid://24e64wxdmvfg" path="res://assets/mobs/red_melee_minion/0003.png" id="5_m2f2s"]
+[ext_resource type="Texture2D" uid="uid://doqk7e6sivec8" path="res://assets/mobs/red_melee_minion/0004.png" id="6_xvhtw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o6nbc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b6g3w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_i7v3s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g453v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_m2f2s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xvhtw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="MeleeMinion" instance=ExtResource("1_7u12f")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(2, -11)
+sprite_frames = SubResource("SpriteFrames_o6nbc")
+autoplay = "default"
+frame_progress = 0.935174
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]
+polygon = PackedVector2Array(64, 41, 66, -1, 42, -13, 22, -33, -4, -17, -21, -31, -37, -53, -53, -69, -56, -51, -35, -2, -5, 39, -5, 39)

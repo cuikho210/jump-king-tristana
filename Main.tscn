@@ -3,18 +3,18 @@
 [ext_resource type="Script" path="res://Main.gd" id="1_6fvxn"]
 [ext_resource type="PackedScene" uid="uid://c368n03udbkes" path="res://Background.tscn" id="1_mxtpn"]
 [ext_resource type="PackedScene" uid="uid://bv5lmmect3s21" path="res://Player.tscn" id="2_ftsfk"]
-[ext_resource type="PackedScene" uid="uid://dm2aqge252p6o" path="res://mob/Rock.tscn" id="2_smwwv"]
 [ext_resource type="PackedScene" uid="uid://cwukf3e24kf28" path="res://mob/Monster.tscn" id="3_5qj14"]
-[ext_resource type="PackedScene" uid="uid://kfi2f5dinjej" path="res://mob/Girl.tscn" id="4_w3iky"]
+[ext_resource type="PackedScene" uid="uid://b3qnvcdpdqthn" path="res://mob/MeleeMinion.tscn" id="4_151dn"]
+[ext_resource type="PackedScene" uid="uid://bkwxsl8kpvwdx" path="res://mob/CasterMinion.tscn" id="4_fwvpg"]
 [ext_resource type="PackedScene" uid="uid://drs1t2lex0vhd" path="res://HUD.tscn" id="6_hoq2j"]
 [ext_resource type="AudioStream" uid="uid://btyyu3ndh2y1n" path="res://assets/game_over.mp3" id="7_0iv35"]
 [ext_resource type="AudioStream" uid="uid://lny4v1vjvocm" path="res://assets/bg.mp3" id="8_a18l2"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_6fvxn")
-Rock = ExtResource("2_smwwv")
 Monster = ExtResource("3_5qj14")
-Girl = ExtResource("4_w3iky")
+CasterMinion = ExtResource("4_fwvpg")
+MeleeMinion = ExtResource("4_151dn")
 
 [node name="Background" parent="." instance=ExtResource("1_mxtpn")]
 

@@ -1,3 +1,4 @@
 # Godot 4+ specific ignores
 .godot/
-android/jump_king.keystore
+android/
+build/

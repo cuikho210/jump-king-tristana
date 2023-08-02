@@ -1,8 +1,8 @@
 extends Node
 
-@export var Rock: PackedScene
 @export var Monster: PackedScene
-@export var Girl: PackedScene
+@export var CasterMinion: PackedScene
+@export var MeleeMinion: PackedScene
 var platform_width = 1280
 var pre_distance = 0
 var is_playing = false
@@ -50,14 +50,14 @@ func generate_mob():
 	var rand = randi_range(0, 4)
 
 	if rand == 1: add_monster()
-	elif rand == 2: add_rock()
-	elif rand == 3: add_girl()
+	elif rand == 2: add_melee_minion()
+	elif rand == 3: add_caster_minion()
 
-func add_rock():
-	var rock = Rock.instantiate()
-	rock.position.x = get_viewport().get_camera_2d().get_screen_center_position().x + platform_width
-	rock.position.y = 494
-	add_child(rock)
+func add_melee_minion():
+	var obj = MeleeMinion.instantiate()
+	obj.position.x = get_viewport().get_camera_2d().get_screen_center_position().x + platform_width
+	obj.position.y = 456
+	add_child(obj)
 
 func add_monster():
 	var monster = Monster.instantiate()
@@ -65,12 +65,11 @@ func add_monster():
 	monster.position.y = randi_range(144, 477)
 	add_child(monster)
 
-func add_girl():
-	var girl = Girl.instantiate()
-	girl.position.x = get_viewport().get_camera_2d().get_screen_center_position().x + platform_width
-	girl.position.y = 444
-	add_child(girl)
-
+func add_caster_minion():
+	var caster_minion = CasterMinion.instantiate()
+	caster_minion.position.x = get_viewport().get_camera_2d().get_screen_center_position().x + platform_width
+	caster_minion.position.y = 464
+	add_child(caster_minion)
 
 func _on_mob_timer_timeout():
 	generate_mob()

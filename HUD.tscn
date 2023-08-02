@@ -94,5 +94,17 @@ texture_normal = SubResource("GradientTexture2D_1b2k7")
 shape = SubResource("RectangleShape2D_dkri8")
 action = "down"
 
+[node name="FPSLabel" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
