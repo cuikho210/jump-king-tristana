@@ -1,6 +1,6 @@
 extends Node
 
-@export var Monster: PackedScene
+@export var Fizz: PackedScene
 @export var CasterMinion: PackedScene
 @export var MeleeMinion: PackedScene
 var platform_width = 1280
@@ -49,7 +49,7 @@ func generate_mob():
 	# Generate
 	var rand = randi_range(0, 4)
 
-	if rand == 1: add_monster()
+	if rand == 1: add_fizz()
 	elif rand == 2: add_melee_minion()
 	elif rand == 3: add_caster_minion()
 
@@ -59,11 +59,11 @@ func add_melee_minion():
 	obj.position.y = 456
 	add_child(obj)
 
-func add_monster():
-	var monster = Monster.instantiate()
-	monster.position.x = get_viewport().get_camera_2d().get_screen_center_position().x + platform_width
-	monster.position.y = randi_range(144, 477)
-	add_child(monster)
+func add_fizz():
+	var mob = Fizz.instantiate()
+	mob.position.x = get_viewport().get_camera_2d().get_screen_center_position().x + platform_width
+	mob.position.y = randi_range(144, 477)
+	add_child(mob)
 
 func add_caster_minion():
 	var caster_minion = CasterMinion.instantiate()

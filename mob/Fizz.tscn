@@ -1,0 +1,53 @@
+[gd_scene load_steps=11 format=3 uid="uid://c1owivp0ipf30"]
+
+[ext_resource type="PackedScene" uid="uid://berjovpytymb4" path="res://mob/Mob.tscn" id="1_ase8w"]
+[ext_resource type="Texture2D" uid="uid://cy3b058wykej1" path="res://assets/mobs/fizz/0000.png" id="2_oatya"]
+[ext_resource type="Texture2D" uid="uid://dnqtlvyem20fj" path="res://assets/mobs/fizz/0007.png" id="3_l0wt5"]
+[ext_resource type="Texture2D" uid="uid://bohqamc1ssjx4" path="res://assets/mobs/fizz/0023.png" id="4_3qijy"]
+[ext_resource type="Texture2D" uid="uid://bxec8pnqy2xlb" path="res://assets/mobs/fizz/0031.png" id="5_5nxgf"]
+[ext_resource type="Texture2D" uid="uid://dsr12ldjg52m4" path="res://assets/mobs/fizz/0039.png" id="6_gqcb4"]
+[ext_resource type="Texture2D" uid="uid://b8jvrc7dcv23e" path="res://assets/mobs/fizz/0063.png" id="7_n8rfv"]
+[ext_resource type="Texture2D" uid="uid://c78b2la0e78pe" path="res://assets/mobs/fizz/0079.png" id="8_31x0l"]
+[ext_resource type="Texture2D" uid="uid://bbgrbwn51l3p0" path="res://assets/mobs/fizz/0087.png" id="9_6gvl3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3xypi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_oatya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l0wt5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3qijy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5nxgf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gqcb4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_n8rfv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_31x0l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6gvl3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="Fizz" instance=ExtResource("1_ase8w")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_3xypi")
+autoplay = "default"
+frame_progress = 0.124344
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]
+polygon = PackedVector2Array(-31, 38, 25, 39, 67, 16, 34, 1, 32, -27, 0, -38, -16, -27, -17, -13, -58, -17, -61, 0)
