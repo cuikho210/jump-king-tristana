@@ -63,7 +63,7 @@ animations = [{
 radius = 22.0
 height = 108.0
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_o84o1")
 SmokeEffect = ExtResource("5_d76tn")
 
@@ -83,11 +83,10 @@ animation = &"run"
 shape = SubResource("CapsuleShape2D_rlbqp")
 
 [node name="SpeedTimer" type="Timer" parent="."]
-wait_time = 7.0
+wait_time = 16.0
 
 [node name="JumpEffectTimer" type="Timer" parent="."]
 wait_time = 0.07
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="SpeedTimer" to="." method="_on_speed_timer_timeout"]
 [connection signal="timeout" from="JumpEffectTimer" to="." method="_on_jump_effect_timer_timeout"]

@@ -1,13 +1,11 @@
-extends Area2D
-signal hit
+extends CharacterBody2D
 
 @export var SmokeEffect: PackedScene
 var default_speed = 444.0
-var jump_velocity = 4444.0
+var jump_velocity = 1777.0
 var speed = default_speed
 var is_running = false
-var default_gravity = gravity / 2.2
-var current_gravity = default_gravity
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 enum State { JUMPING, RUNNING }
 var pre_state = State.RUNNING
@@ -16,26 +14,22 @@ func _ready():
 	$Anime.play("idle")
 
 func _physics_process(delta):
-	var velocity = Vector2.ZERO
+	if not is_floor():
+		velocity.y += gravity * delta
 
 	if (is_running):
 		velocity.x = speed
 
 		# Jump
-		if current_gravity < default_gravity: current_gravity += default_gravity
-
 		if Input.is_action_pressed("up") and is_floor():
-			current_gravity -= jump_velocity
+			velocity.y = -jump_velocity
 			$JumpEffectTimer.start()
 			_on_jump_effect_timer_timeout()
 		elif Input.is_action_pressed("down"):
-			current_gravity += jump_velocity
+			velocity.y = jump_velocity * 2
 
-		velocity.y += current_gravity
-		position += velocity * delta
+		move_and_slide()
 		position.y = clamp(position.y, 0, 449)
-
-		if is_floor(): current_gravity = default_gravity
 
 	# Animation
 	if !is_floor():
@@ -66,13 +60,9 @@ func game_over():
 func is_floor():
 	return position.y > 448
 
-
 func _on_speed_timer_timeout():
-	speed += 44
+	speed += 24
 	$Anime.play("run", get_animation_speed())
-
-func _on_body_entered(_body:Node2D):
-	hit.emit()
 
 func add_smoke_effect(animation_name = "drop", x = position.x + 44, y = position.y + 24):
 	var effect = SmokeEffect.instantiate()
