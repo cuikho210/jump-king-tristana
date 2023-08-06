@@ -1,0 +1,123 @@
+[gd_scene load_steps=28 format=3 uid="uid://dexsr8kelern2"]
+
+[ext_resource type="PackedScene" uid="uid://berjovpytymb4" path="res://mob/Mob.tscn" id="1_tmela"]
+[ext_resource type="Texture2D" uid="uid://jwgydpor5b7w" path="res://assets/mobs/corki/0000.png" id="2_b4svw"]
+[ext_resource type="Texture2D" uid="uid://bmehh5x3dv8xa" path="res://assets/mobs/corki/0001.png" id="3_1b1n3"]
+[ext_resource type="Texture2D" uid="uid://dfuas5pqnj3bo" path="res://assets/mobs/corki/0002.png" id="4_8rliv"]
+[ext_resource type="Texture2D" uid="uid://bsmgaj33esm65" path="res://assets/mobs/corki/0003.png" id="5_xnxlc"]
+[ext_resource type="Texture2D" uid="uid://vjrp3kdnf7p" path="res://assets/mobs/corki/0004.png" id="6_3svic"]
+[ext_resource type="Texture2D" uid="uid://bn13r4j404g3e" path="res://assets/mobs/corki/0005.png" id="7_kejto"]
+[ext_resource type="Texture2D" uid="uid://chxn2v5gmo622" path="res://assets/mobs/corki/0006.png" id="8_3j2y5"]
+[ext_resource type="Texture2D" uid="uid://bo0c5n0pwu1qn" path="res://assets/mobs/corki/0007.png" id="9_klf8u"]
+[ext_resource type="Texture2D" uid="uid://x1j7i8wkgw04" path="res://assets/mobs/corki/0008.png" id="10_oauuw"]
+[ext_resource type="Texture2D" uid="uid://mm25g8ow7d13" path="res://assets/mobs/corki/0009.png" id="11_1llf3"]
+[ext_resource type="Texture2D" uid="uid://di01crsd4ieva" path="res://assets/mobs/corki/0010.png" id="12_onawg"]
+[ext_resource type="Texture2D" uid="uid://lqp3i0ycsxxo" path="res://assets/mobs/corki/0011.png" id="13_aljym"]
+[ext_resource type="Texture2D" uid="uid://ddfj2edkhxlrw" path="res://assets/mobs/corki/0012.png" id="14_e4xuc"]
+[ext_resource type="Texture2D" uid="uid://dy4kgrvvgwt2g" path="res://assets/mobs/corki/0013.png" id="15_i3x01"]
+[ext_resource type="Texture2D" uid="uid://dydpxbvg8fj40" path="res://assets/mobs/corki/0014.png" id="16_ufth0"]
+[ext_resource type="Texture2D" uid="uid://sd1fnk250gpv" path="res://assets/mobs/corki/0015.png" id="17_jkul6"]
+[ext_resource type="Texture2D" uid="uid://bfoo6wnm4t4rf" path="res://assets/mobs/corki/0016.png" id="18_et1ub"]
+[ext_resource type="Texture2D" uid="uid://yqngxsp3tua6" path="res://assets/mobs/corki/0017.png" id="19_m20gp"]
+[ext_resource type="Texture2D" uid="uid://b5dry5u3cxi4d" path="res://assets/mobs/corki/0018.png" id="20_rql5e"]
+[ext_resource type="Texture2D" uid="uid://drcol35puxko6" path="res://assets/mobs/corki/0019.png" id="21_8eh6w"]
+[ext_resource type="Texture2D" uid="uid://ccv5vksc4npt7" path="res://assets/mobs/corki/0020.png" id="22_jbcse"]
+[ext_resource type="Texture2D" uid="uid://cp07d4fa7123f" path="res://assets/mobs/corki/0021.png" id="23_7vuox"]
+[ext_resource type="Texture2D" uid="uid://uw8o4jj6vfij" path="res://assets/mobs/corki/0022.png" id="24_yskqh"]
+[ext_resource type="Texture2D" uid="uid://dikk072ojsiju" path="res://assets/mobs/corki/0023.png" id="25_p513q"]
+[ext_resource type="Texture2D" uid="uid://c3rnoel4jxdg" path="res://assets/mobs/corki/0024.png" id="26_thju2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sanda"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b4svw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1b1n3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8rliv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xnxlc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3svic")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kejto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3j2y5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_klf8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_oauuw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_1llf3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_onawg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_aljym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_e4xuc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_i3x01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ufth0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_jkul6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_et1ub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_m20gp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_rql5e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_8eh6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_jbcse")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_7vuox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_yskqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_p513q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_thju2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
+[node name="Corki" instance=ExtResource("1_tmela")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(-1, 8)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_sanda")
+autoplay = "default"
+frame_progress = 0.118862
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]
+polygon = PackedVector2Array(-79, 6, -3, -44, 57, -42, 63, 17, -2, 46)
