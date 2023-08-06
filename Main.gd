@@ -1,5 +1,7 @@
 extends Node
 
+const SAVE_PATH = "user://data.save"
+
 @export var Corki: PackedScene
 @export var CasterMinion: PackedScene
 @export var MeleeMinion: PackedScene
@@ -8,11 +10,21 @@ var pre_distance = 0
 var is_playing = false
 var is_enable_music = false
 
+var save_data = {
+	"best_score": 0,
+	"is_enable_music": true,
+	"is_show_fps": false
+}
+
+func _ready():
+	load_saved_data()
+
 func game_over():
 	$HUD.get_node("Message").show()
 	$HUD.get_node("PlayButton").show()
 	$HUD.get_node("ScoreTimer").stop()
 	$HUD.get_node("Message").text = "Game Over!"
+	if $HUD.score > save_data.best_score: $HUD.update_best_score($HUD.score)
 
 	$Player.game_over()
 	$MobTimer.stop()
@@ -21,6 +33,7 @@ func game_over():
 	if is_enable_music: $GameOverSound.play()
 
 	is_playing = false
+	save()
 
 func new_game():
 	$HUD.get_node("Message").hide()
@@ -41,6 +54,7 @@ func pause_game():
 
 func continue_game():
 	get_tree().paused = false
+	save()
 
 func generate_mob():
 	if not is_playing: return
@@ -86,4 +100,30 @@ func toggle_music(is_enable):
 	is_enable_music = is_enable
 
 	if not is_enable: $BgMusic.stop()
-	else: $BgMusic.play()
+	elif is_playing: $BgMusic.play()
+
+func save():
+	if save_data.best_score < $HUD.score: save_data.best_score = $HUD.score
+	save_data.is_enable_music = is_enable_music
+	save_data.is_show_fps = $HUD.is_show_fps
+
+	var save_file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	var json_string = JSON.stringify(save_data)
+	save_file.store_line(json_string)
+
+func load_saved_data():
+	if not FileAccess.file_exists(SAVE_PATH):
+		return
+	
+	var save_file = FileAccess.open(SAVE_PATH, FileAccess.READ)
+	var json_string = save_file.get_line()
+
+	var json = JSON.new()
+	var parse_result = json.parse(json_string)
+	if parse_result != OK: return
+
+	save_data = json.get_data()
+
+	$HUD.update_best_score(save_data.best_score)
+	$GUI.set_enable_music(save_data.is_enable_music)
+	$GUI.set_show_fps(save_data.is_show_fps)

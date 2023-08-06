@@ -13,7 +13,7 @@ func _on_play_button_pressed():
 
 func _on_score_timer_timeout():
 	score += 1
-	$HBoxContainer/ScoreLabel.text = str(score)
+	$HBoxContainer/ScoreLabel.text = "Score: " + str(score)
 
 func _process(_delta):
 	if is_show_fps:
@@ -23,3 +23,6 @@ func _process(_delta):
 func toggle_show_fps(is_enable: bool):
 	$HBoxContainer/FPSLabel.text = ""
 	is_show_fps = is_enable
+
+func update_best_score(best_score):
+	$HBoxContainer/BestScoreLabel.text = "Best score: " + str(best_score)
