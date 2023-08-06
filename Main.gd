@@ -6,6 +6,7 @@ extends Node
 var platform_width = 1280
 var pre_distance = 0
 var is_playing = false
+var is_enable_music = false
 
 func game_over():
 	$HUD.get_node("Message").show()
@@ -14,9 +15,10 @@ func game_over():
 	$HUD.get_node("Message").text = "Game Over!"
 
 	$Player.game_over()
-	$BgMusic.stop()
-	$GameOverSound.play()
 	$MobTimer.stop()
+
+	$BgMusic.stop()
+	if is_enable_music: $GameOverSound.play()
 
 	is_playing = false
 
@@ -27,12 +29,18 @@ func new_game():
 	$HUD.score = 0
 
 	$Player.new_game()
-	$BgMusic.play()
 	$MobTimer.start()
+	if is_enable_music: $BgMusic.play()
 
 	is_playing = true
 	pre_distance = 0;
 	get_tree().call_group("mobs", "queue_free")
+
+func pause_game():
+	get_tree().paused = true
+
+func continue_game():
+	get_tree().paused = false
 
 func generate_mob():
 	if not is_playing: return
@@ -73,3 +81,9 @@ func add_caster_minion():
 
 func _on_mob_timer_timeout():
 	generate_mob()
+
+func toggle_music(is_enable):
+	is_enable_music = is_enable
+
+	if not is_enable: $BgMusic.stop()
+	else: $BgMusic.play()

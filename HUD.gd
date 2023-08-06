@@ -2,6 +2,7 @@ extends CanvasLayer
 signal new_game
 
 var score = 0
+var is_show_fps = false
 
 func _ready():
 	var screen_width = get_viewport().get_visible_rect().size.x
@@ -12,8 +13,13 @@ func _on_play_button_pressed():
 
 func _on_score_timer_timeout():
 	score += 1
-	$ScoreLabel.text = str(score)
+	$HBoxContainer/ScoreLabel.text = str(score)
 
 func _process(_delta):
-	var fps = Engine.get_frames_per_second()
-	$FPSLabel.text = str(fps)
+	if is_show_fps:
+		var fps = Engine.get_frames_per_second()
+		$HBoxContainer/FPSLabel.text = str(fps) + " FPS"
+
+func toggle_show_fps(is_enable: bool):
+	$HBoxContainer/FPSLabel.text = ""
+	is_show_fps = is_enable

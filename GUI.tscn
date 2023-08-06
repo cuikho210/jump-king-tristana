@@ -1,0 +1,101 @@
+[gd_scene load_steps=11 format=3 uid="uid://cbwoy61nxialx"]
+
+[ext_resource type="Script" path="res://GUI.gd" id="1_jbwon"]
+[ext_resource type="Texture2D" uid="uid://duxmjkcxg2cqd" path="res://assets/icons/icons8-settings-24.png" id="2_ryww8"]
+[ext_resource type="Texture2D" uid="uid://ds61lmwficrog" path="res://assets/icons/icons8-close-24.png" id="3_b8njw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jp61"]
+bg_color = Color(1, 1, 1, 0)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oblky"]
+bg_color = Color(1, 1, 1, 0.576471)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oa0ef"]
+bg_color = Color(1, 0.588235, 0.0313726, 0.301961)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_266lc"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_mma51"]
+action = &"ui_cancel"
+
+[sub_resource type="Shortcut" id="Shortcut_jk2jh"]
+events = [SubResource("InputEventAction_mma51")]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vno3"]
+bg_color = Color(0.937255, 0.643137, 0.552941, 1)
+
+[node name="GUI" type="CanvasLayer"]
+script = ExtResource("1_jbwon")
+
+[node name="OpenMenuButton" type="Button" parent="."]
+offset_left = 32.0
+offset_right = 80.0
+offset_bottom = 48.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_7jp61")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oblky")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oa0ef")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_266lc")
+shortcut = SubResource("Shortcut_jk2jh")
+icon = ExtResource("2_ryww8")
+icon_alignment = 1
+
+[node name="Menu" type="ScrollContainer" parent="."]
+process_mode = 2
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5vno3")
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_right = 64
+
+[node name="Panel" type="VBoxContainer" parent="Menu/MarginContainer"]
+layout_mode = 2
+
+[node name="CloseMenuButton" type="Button" parent="Menu/MarginContainer/Panel"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+icon = ExtResource("3_b8njw")
+flat = true
+icon_alignment = 1
+
+[node name="ShowFPSToggle" type="CheckButton" parent="Menu/MarginContainer/Panel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Show FPS"
+
+[node name="MusicToggle" type="CheckButton" parent="Menu/MarginContainer/Panel"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Enable Music"
+
+[connection signal="pressed" from="OpenMenuButton" to="." method="open_menu"]
+[connection signal="pressed" from="Menu/MarginContainer/Panel/CloseMenuButton" to="." method="close_menu"]
+[connection signal="toggled" from="Menu/MarginContainer/Panel/ShowFPSToggle" to="." method="toggle_show_fps"]
+[connection signal="toggled" from="Menu/MarginContainer/Panel/MusicToggle" to="." method="toggle_music"]

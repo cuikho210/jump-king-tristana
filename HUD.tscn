@@ -36,20 +36,6 @@ size = Vector2(640, 720)
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_c357w")
 
-[node name="ScoreLabel" type="Label" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 48.0
-grow_horizontal = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 32
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Message" type="Label" parent="."]
 anchors_preset = 14
 anchor_top = 0.5
@@ -94,17 +80,32 @@ texture_normal = SubResource("GradientTexture2D_1b2k7")
 shape = SubResource("RectangleShape2D_dkri8")
 action = "down"
 
-[node name="FPSLabel" type="Label" parent="."]
-anchors_preset = 7
-anchor_left = 0.5
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 12
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -20.0
 offset_top = -23.0
-offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="FPSLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="ScoreLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FPSLabel2" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Best score: 777"
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
